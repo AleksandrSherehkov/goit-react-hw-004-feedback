@@ -15,7 +15,7 @@ export const Section = ({ title, children }) => {
       as="section"
     >
       {title && (
-        <Text color="black" fontWeight="bold">
+        <Text color="black" fontWeight="bold" as="h2">
           {title}
         </Text>
       )}
