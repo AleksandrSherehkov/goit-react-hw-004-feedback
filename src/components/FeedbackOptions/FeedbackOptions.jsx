@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
+import { Box } from 'Box';
+import { ButtonStyled } from 'components/FeedbackOptions/FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <ul>
+    <Box mt={5} width="300px" justifyContent="space-between" as="ul">
       {options.map(option => (
         <li key={option}>
-          <button type="button" name={option} onClick={onLeaveFeedback}>
+          <ButtonStyled type="button" name={option} onClick={onLeaveFeedback}>
             {option}
-          </button>
+          </ButtonStyled>
         </li>
       ))}
-    </ul>
+    </Box>
   );
 };
 

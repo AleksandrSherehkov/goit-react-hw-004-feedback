@@ -1,16 +1,17 @@
 export const theme = {
   colors: {
-    sucses: 'green',
-    failed: 'red',
+    red: '#c70902',
+    good: '#55e83f',
+    bad: '#2e302e',
     black: '#4b525e',
     white: '#fff',
     text: '#a1abb6',
     background: '#fff',
     primary: '#e7ecf2',
     secondary: '#f3f6f9',
-    accent: '#00bcd5',
     border: '#e4e9f0',
     muted: '#adacac',
+    button: '#6c5ce7',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
 
@@ -47,5 +48,6 @@ export const theme = {
   },
   shadows: {
     normal: '3px 3px 6px 0px rgba(0, 0, 0, 0.75)',
+    button: '0px 5px 0px 0px #a29bfe',
   },
 };

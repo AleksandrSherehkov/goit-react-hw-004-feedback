@@ -1,35 +1,37 @@
 import PropTypes from 'prop-types';
+import { Box } from 'Box';
+import { Text } from 'Text';
 
 export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <ul>
+    <Box mt={5} width="350px" gridGap={4} flexDirection="column" as="ul">
       <li>
-        <p>
+        <Text color="good">
           Good: <span>{good}</span>
-        </p>
+        </Text>
       </li>
       <li>
-        <p>
+        <Text>
           Neutral: <span>{neutral}</span>
-        </p>
+        </Text>
       </li>
       <li>
-        <p>
+        <Text color="bad">
           Bad: <span>{bad}</span>
-        </p>
+        </Text>
       </li>
       <li>
-        <p>
+        <Text color="red" fontSize="xl">
           Total: <span>{total}</span>
-        </p>
+        </Text>
       </li>
       <li>
-        <p>
+        <Text color="button">
           Positive feedback:
           <span> {positivePercentage + '%'}</span>
-        </p>
+        </Text>
       </li>
-    </ul>
+    </Box>
   );
 };
 
