@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { Box } from 'Box';
-import { Text } from 'Text';
+import { Box } from 'utilities/Box';
+import { Text } from 'utilities/Text';
 
 export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
