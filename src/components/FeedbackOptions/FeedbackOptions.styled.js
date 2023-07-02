@@ -9,6 +9,7 @@ export const ButtonStyled = styled.button`
 
   font-size: ${({ theme }) => theme.fontSizes.m};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+
   color: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.radii.normal};
   transition: all ease 0.1s;

@@ -2,24 +2,16 @@ import PropTypes from 'prop-types';
 import { Box } from 'utilities/Box';
 import { Text } from 'utilities/Text';
 
-export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+export const Statistics = ({ total, positivePercentage, state }) => {
   return (
     <Box mt={5} width="350px" gridGap={4} flexDirection="column" as="ul">
-      <li>
-        <Text color="good">
-          Good: <span>{good}</span>
-        </Text>
-      </li>
-      <li>
-        <Text>
-          Neutral: <span>{neutral}</span>
-        </Text>
-      </li>
-      <li>
-        <Text color="bad">
-          Bad: <span>{bad}</span>
-        </Text>
-      </li>
+      {state.map(([name, value]) => (
+        <li key={name}>
+          <Text color={name}>
+            {name}: <span>{value}</span>
+          </Text>
+        </li>
+      ))}
       <li>
         <Text color="red" fontSize="xl">
           Total: <span>{total}</span>
@@ -35,10 +27,11 @@ export const Statistics = ({ good, neutral, bad, total, positivePercentage }) =>
   );
 };
 
-Statistics.prototype = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
+Statistics.propTypes = {
   total: PropTypes.number.isRequired,
+
   positivePercentage: PropTypes.string.isRequired,
+  state: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ).isRequired,
 };
